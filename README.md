@@ -1,6 +1,6 @@
 # False Positive Catalogue
 
-Here are source code samples of the false positive patterns listed on the [False Positive Catalogue](https://github.com/SEDS/mangrove-catalogue/wiki/FP-Catalog). Rather than browsing the repository above, we recommend that you let the wiki page guide you through the patterns.
+Here are source code samples of the false positive patterns listed on the [False Positive Catalogue](https://github.com/SEDS/mangrove-catalogue/wiki/FP-Catalog). Rather than browsing the repository above, we recommend that you let the wiki page guide you through the patterns. Static code analysis tool names are replaced with "Static Code Analysis Tool" to achieve anonymity.
 
 ## List of Abbreviations
 
