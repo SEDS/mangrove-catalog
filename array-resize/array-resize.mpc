@@ -1,0 +1,8 @@
+project (array-resize) {
+  exename = array-resize
+  install = .
+
+  Source_Files {
+    array-resize.c
+  }
+}

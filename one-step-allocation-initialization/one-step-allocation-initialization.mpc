@@ -1,0 +1,8 @@
+project (one-step-allocation-initialization) {
+  exename = one-step-allocation-initialization
+  install = .
+
+  Source_Files {
+    one-step-allocation-initialization.cpp
+  }
+}

@@ -1,0 +1,8 @@
+project (ref-ptr-read) {
+  exename = ref-ptr-read
+  install = .
+
+  Source_Files {
+    ref-ptr-read.cpp
+  }
+}

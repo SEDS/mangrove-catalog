@@ -1,0 +1,9 @@
+project (alloc_using_function_param) {
+  exename = alloc_using_function_param
+  install = .
+
+  Source_Files {
+    alloc-using-function-param_a.cpp
+    alloc-using-function-param_b.cpp
+  }
+}

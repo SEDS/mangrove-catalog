@@ -1,0 +1,8 @@
+project (buffer-store-strncat) {
+  exename = buffer-store-strncat
+  install = .
+
+  Source_Files {
+    buffer-store-strncat.c
+  }
+}

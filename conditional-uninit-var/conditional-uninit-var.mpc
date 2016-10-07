@@ -1,0 +1,8 @@
+project (conditional-uninit-var) {
+  exename = conditional-uninit-var
+  install = .
+
+  Source_Files {
+    conditional-uninit-var.c
+  }
+}

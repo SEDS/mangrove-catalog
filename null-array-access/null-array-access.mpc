@@ -1,0 +1,8 @@
+project (null-array-access) {
+  exename = null-array-access
+  install = .
+
+  Source_Files {
+    null-array-access.c
+  }
+}

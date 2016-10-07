@@ -1,0 +1,8 @@
+project (buffer-store-socket) {
+  exename = buffer-store-socket
+  install = .
+
+  Source_Files {
+    buffer-store-socket.c
+  }
+}

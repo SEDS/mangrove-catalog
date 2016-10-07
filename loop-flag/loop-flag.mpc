@@ -1,0 +1,8 @@
+project (loop-flag) {
+  exename = loop-flag
+  install = .
+
+  Source_Files {
+    loop-flag.cpp
+  }
+}

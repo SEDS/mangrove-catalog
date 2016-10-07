@@ -1,0 +1,24 @@
+// Juliet CWE675_Duplicate_Operations_on_Resource__open_81a.cpp
+
+#include "FileCloser.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+namespace test {
+ 
+void createFile(void)
+{  
+    FILE * fp = fopen ("GoodSource_open.txt", "w+");
+    FileCloserBase * closeObj = new FileCloserSubclass();
+
+    closeObj->action(fp);
+    delete closeObj; 
+}
+}  
+
+using namespace test;
+
+int main(void) {
+    createFile();
+    return 0;
+}

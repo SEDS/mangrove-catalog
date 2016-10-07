@@ -1,0 +1,8 @@
+project (conditional-mem-leak) {
+  exename = conditional-mem-leak
+  install = .
+
+  Source_Files {
+    conditional-mem-leak.c
+  }
+}

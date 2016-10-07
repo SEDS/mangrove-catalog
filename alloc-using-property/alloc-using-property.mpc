@@ -1,0 +1,13 @@
+project (alloc-using-property) {
+  exename = alloc-using-property
+  install = .
+
+  Header_Files {
+    alloc-using-property.h
+  }
+
+  Source_Files {
+    alloc-using-property.cpp
+    client.cpp
+  }
+}

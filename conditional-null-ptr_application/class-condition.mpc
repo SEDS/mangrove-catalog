@@ -1,0 +1,13 @@
+project (class-condition) {
+  exename = class-condition
+  install = .
+
+  Source_Files {
+    class-condition.cpp
+    client.cpp
+  }
+
+  Header_Files {
+    class-condition.h
+  }
+}

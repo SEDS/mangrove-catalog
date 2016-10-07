@@ -1,0 +1,8 @@
+project (subscope-leak) {
+  exename = subscope-leak
+  install = .
+
+  Source_Files {
+    subscope-leak.cpp
+  }
+}

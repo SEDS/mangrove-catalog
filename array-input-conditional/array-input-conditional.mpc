@@ -1,0 +1,8 @@
+project (array-input-conditional) {
+  exename = array-input-conditional
+  install = .
+
+  Source_Files {
+    array-input-conditional.cpp
+  }
+}

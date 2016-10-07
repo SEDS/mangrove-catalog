@@ -1,0 +1,8 @@
+project (garbage-pointer-scaling) {
+  exename = garbage-pointer-scaling
+  install = .
+
+  Source_Files {
+    garbage-pointer-scaling.c
+  }
+}

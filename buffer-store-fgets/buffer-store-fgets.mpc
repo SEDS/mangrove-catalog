@@ -1,0 +1,8 @@
+project (buffer-store-fgets) {
+  exename = buffer-store-fgets
+  install = .
+
+  Source_Files {
+    buffer-store-fgets.c
+  }
+}

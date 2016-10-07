@@ -1,0 +1,14 @@
+project (file-close-virtual-method) {
+  exename = file-close-virtual-method
+  install = .
+
+  Source_Files {
+    client.cpp
+    Deallocator.cpp
+  }
+
+  Header_Files {
+    Deallocator.h
+    DataClass.h
+  }
+}

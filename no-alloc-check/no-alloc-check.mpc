@@ -1,0 +1,8 @@
+project (no-alloc-check) {
+  exename = no-alloc-check
+  install = .
+
+  Source_Files {
+    no-alloc-check_malloc.c
+  }
+}

@@ -1,0 +1,8 @@
+project (dereference-non-ptr) {
+  exename = dereference-non-ptr
+  install = .
+
+  Source_Files {
+    dereference-non-ptr.c
+  }
+}

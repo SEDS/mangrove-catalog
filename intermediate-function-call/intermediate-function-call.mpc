@@ -1,0 +1,17 @@
+project (intermediate-function-call) {
+  exename = intermediate-function-call
+  install = .
+
+  // Compilation requires Juliet test case support files.
+  // Be sure the paths are correct for the build to succeed.
+  Source_Files {
+    intermediate-function-call.c
+    /opt/juliet/testcasesupport/io.c
+    /opt/juliet/testcasesupport/std_thread.c
+  }
+
+  specific (make) { 
+    compile_flags += -D INCLUDEMAIN
+    compile_flags += -I /opt/juliet/testcasesupport
+  } 
+}

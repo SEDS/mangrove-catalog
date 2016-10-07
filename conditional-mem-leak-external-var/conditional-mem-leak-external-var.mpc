@@ -1,0 +1,17 @@
+project (conditional-mem-leak-external-var) {
+  exename = conditional-mem-leak-external-var
+  install = .
+
+  // Compilation requires Juliet test case support files.
+  // Be sure the paths are correct for the build to succeed.
+  Source_Files {
+    conditional-mem-leak-external-var.c
+    /opt/juliet/testcasesupport/io.c
+    /opt/juliet/testcasesupport/std_thread.c
+  }
+
+  specific (make) { 
+    compile_flags += -D INCLUDEMAIN
+    compile_flags += -I /opt/juliet/testcasesupport
+  } 
+}

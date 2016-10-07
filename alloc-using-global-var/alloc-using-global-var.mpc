@@ -1,0 +1,8 @@
+project (alloc-using-global-var) {
+  exename = alloc-using-global-var
+  install = .
+
+  Source_Files {
+    alloc-using-global-var.c
+  }
+}

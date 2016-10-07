@@ -1,0 +1,8 @@
+project (bad-cast-argument) {
+  exename = bad-cast-argument
+  install = .
+
+  Source_Files {
+    bad-cast-argument.cpp
+  }
+}

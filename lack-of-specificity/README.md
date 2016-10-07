@@ -1,0 +1,3 @@
+## Lack of Specificity FPs
+
+These structures produce TPs with misleading warning messages. The tool may give a warning that lacks specific details to locate the actual error. One example is the tool flagging the *effect* of an error instead of the true *cause*; however, the developer must understand the root cause in order to fix the error. These structures may be considered FPs of a lesser severity.

@@ -1,0 +1,8 @@
+project (sscanf-uninit-var) {
+  exename = sscanf-uninit-var
+  install = .
+
+  Source_Files {
+    sscanf-uninit-var.c
+  }
+}

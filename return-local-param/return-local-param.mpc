@@ -1,0 +1,8 @@
+project (return-local-param) {
+  exename = return-local-param
+  install = .
+
+  Source_Files {
+    return-local-param.c
+  }
+}

@@ -1,0 +1,8 @@
+project (clear-list) {
+  exename = clear-list
+  install = .
+
+  Source_Files {
+    clear-list.cpp
+  }
+}

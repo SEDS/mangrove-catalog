@@ -1,0 +1,8 @@
+project (union-simultaneous-access) {
+  exename = union-simultaneous-access
+  install = .
+
+  Source_Files {
+    union-simultaneous-access.cpp
+  }
+}

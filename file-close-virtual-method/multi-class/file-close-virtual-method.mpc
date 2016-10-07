@@ -1,0 +1,17 @@
+project (file-close-virtual-method) {
+  exename = file-close-virtual-method
+  install = .
+
+  Source_Files {
+    client.cpp
+    A.cpp
+    B.cpp
+    C.cpp
+  }
+
+  Header_Files {
+    A.h
+    B.h
+    C.h
+  }
+}
