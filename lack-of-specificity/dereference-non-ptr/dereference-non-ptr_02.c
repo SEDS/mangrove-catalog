@@ -21,9 +21,9 @@ int main(void)
 
     // CHANGE: Use allocated, non-dangling pointer on RHS of assignment.
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
+    // Tool C FP: none
+    // Tool B FP: none
+    // Tool A FP: none
     *dataPtr = something;
 
     free(something);

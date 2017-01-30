@@ -5,12 +5,12 @@
 
 int main(void)
 {
-    // Static Code Analysis Tool note: fopen() returns NULL.
+    // Tool C note: fopen() returns NULL.
     FILE * data = fopen("myfile.txt", "w+");
 
-    // Static Code Analysis Tool warning: Null Pointer Dereference. The body of fclose() dereferences 'data', but it is NULL.
-    // Static Code Analysis Tool warning: none
-    // Static Code Analysis Tool warning: none
+    // Tool C warning: Null Pointer Dereference. The body of fclose() dereferences 'data', but it is NULL.
+    // Tool B warning: none
+    // Tool A warning: none
     fclose(data);
     return 0;
 }

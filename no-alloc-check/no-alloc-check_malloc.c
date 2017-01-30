@@ -5,12 +5,12 @@
 
 int main(void)
 {
-    // Static Code Analysis Tool note: malloc() returns NULL.
+    // Tool C note: malloc() returns NULL.
     char * data = (char *)malloc(sizeof(char));
 
-    // Static Code Analysis Tool warning: Null Pointer Dereference. 'Data' is dereferenced here, but it is NULL.
-    // Static Code Analysis Tool warning: none
-    // Static Code Analysis Tool warning: none
+    // Tool C warning: Null Pointer Dereference. 'Data' is dereferenced here, but it is NULL.
+    // Tool B warning: none
+    // Tool A warning: none
     *data = 'a';
     free(data);
     return 0;

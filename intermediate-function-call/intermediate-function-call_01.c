@@ -24,9 +24,9 @@ int main(void)
 
     if(staticFive==5)
     {
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: none
+        // Tool B FP: none
+        // Tool A FP: none
         printf("%02x\n", data[0]);
     }
     return 0;

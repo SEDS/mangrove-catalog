@@ -10,8 +10,8 @@ int main(void)
         char * data = *dataPtr2;
         delete [] data;
     }
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Memory leak: data
+    // Tool C FP: none
+    // Tool B FP: none
+    // Tool A FP: (error) Memory leak: data
     return 0;
 }

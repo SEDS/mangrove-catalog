@@ -1,8 +1,0 @@
-project (conditional-uninit-var-chain) {
-  exename = conditional-uninit-var-chain
-  install = .
-
-  Source_Files {
-    conditional-uninit-var-chain.c
-  }
-}

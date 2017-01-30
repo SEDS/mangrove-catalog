@@ -13,8 +13,8 @@ int main(void)
     char * data;
     if(staticFive!=5)
     {
-        // This function call must be here for Static Code Analysis Tool to give a FP.
-        // Static Code Analysis Tool assumes this function sets staticFive to 5.
+        // This function call must be here for Tool B to give a FP.
+        // Tool B assumes this function sets staticFive to 5.
         printLine("shouldn't print");
     }
     else
@@ -24,9 +24,9 @@ int main(void)
 
     if(staticFive==5)
     {
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: Dereference of undefined pointer value
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: none
+        // Tool B FP: (warning) Dereference of undefined pointer value
+        // Tool A FP: none
         printf("%02x\n", data[0]);
     }
     return 0;

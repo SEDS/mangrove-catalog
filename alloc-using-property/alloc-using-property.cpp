@@ -19,9 +19,9 @@ AllocUsingProperty::~AllocUsingProperty()
         intPointer[i] = 7;
     }
 
-    // Static Code Analysis Tool FP: Uninitialized variable. *intPointer was not initialized
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool: none
+    // Tool C FP: Uninitialized variable. *intPointer was not initialized
+    // Tool B FP: none
+    // Tool A: none
     printf("int: %d\n", intPointer[0]);
     delete [] intPointer;
 }

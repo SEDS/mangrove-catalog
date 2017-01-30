@@ -7,7 +7,7 @@
 
 // GLOBAL_CONST_TRUE is defined as follows in io.c
 // const int GLOBAL_CONST_TRUE = 1;
-// If the global variable is defined within this file (still globally), the FPs go away (for Static Code Analysis Tool and Static Code Analysis Tool).
+// If the global variable is defined within this file (still globally), the FPs go away (for Tool B and Tool A).
 
 int main(void)
 {
@@ -15,10 +15,10 @@ int main(void)
     data = (char *)malloc(20*sizeof(char));
     if(GLOBAL_CONST_TRUE)
     {
-    	// Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: Potential leak of memory pointed to by 'data'
-        // Static Code Analysis Tool FP: Memory leak: data
+    	// Tool C FP: none
+        // Tool B FP: (warning) Potential leak of memory pointed to by 'data'
+        // Tool A FP: (error) Memory leak: data
         free(data);
     }
-    // Note: Adding a return statement here causes the Static Code Analysis Tool FP to go away.
+    // Note: Adding a return statement here causes the Tool A FP to go away.
 }

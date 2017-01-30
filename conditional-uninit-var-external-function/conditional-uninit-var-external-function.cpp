@@ -14,9 +14,9 @@ int main(void)
         data = new TwoIntsClass;
         data->intOne = 5;
     }
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Dereference of undefined pointer value
-    // Static Code Analysis Tool FP: Uninitialized variable: data
+    // Tool C FP: none
+    // Tool B FP: (warning) Dereference of undefined pointer value
+    // Tool A FP: (error) Uninitialized variable: data
     printf("data: %d\n", data->intOne);
     delete data;
     return 0;

@@ -19,9 +19,9 @@ int main(void)
     {
         // (Side note: For `strncat` the length argument does NOT include the null character--that is always added regardless.)
 
-        // Static Code Analysis Tool FP: Tainted Buffer Access. This code could write past the end of the buffer pointed to by 'data'.
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: Tainted Buffer Access. This code could write past the end of the buffer pointed to by 'data'.
+        // Tool B FP: none
+        // Tool A FP: none
         strncat(data+dataLen, environment, SIZE-dataLen-1);
     }
 

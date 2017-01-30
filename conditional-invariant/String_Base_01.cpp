@@ -13,7 +13,7 @@
 template <class ACE_CHAR_T>
 ACE_String_Base<ACE_CHAR_T>::ACE_String_Base(const ACE_CHAR_T *s, size_t len, bool release)
     : buf_len_(0),
-      // Static Code Analysis Tool event: 'rep_' is set to NULL. Dereferenced later, causing the null pointer dereference.
+      // Tool C event: 'rep_' is set to NULL. Dereferenced later, causing the null pointer dereference.
       rep_(0)
 {
     this->set(s, len, release);
@@ -27,7 +27,7 @@ ACE_String_Base<ACE_CHAR_T>::set(const ACE_CHAR_T *s, size_t len, bool release)
     // This inequality is less likely to be satisfied, since 'len' as a size_t type must be >= 0.
     if (s != 0 && len != 0 && release && this->buf_len_ < 1)
     {
-        // Assuming that the 'else if' clause below is executed (as Static Code Analysis Tool believes),
+        // Assuming that the 'else if' clause below is executed (as Tool C believes),
         // this 'if' clause would have had to have been executed, causing the clause below
         // NOT to be executed. This is a contradition, so therefore the warning is a FP.
 
@@ -38,9 +38,9 @@ ACE_String_Base<ACE_CHAR_T>::set(const ACE_CHAR_T *s, size_t len, bool release)
     }
     else if (s != 0 && len != 0 && release)
     {
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: none
+        // Tool B FP: none
+        // Tool A FP: none
         memcpy(this->rep_, s, len * sizeof(ACE_CHAR_T));
         this->rep_[len] = 0;
     }

@@ -10,14 +10,14 @@ namespace test {
  
 void createFile(void)
 {  
-    // Static Code Analysis Tool FP: Leak
+    // Tool C FP: Leak
     int fildes = open("file.txt", O_RDWR|O_CREAT, S_IREAD|S_IWRITE);
     FileCloserBase * fileCloser = new FileCloserSubclass();
  
     fileCloser->action(fildes);  
     delete fileCloser;  
 }
-// Static Code Analysis Tool event: 'fildes' has gone out of scope and no longer
+// Tool C event: 'fildes' has gone out of scope and no longer
 // references the resource of interest.
 }
 

@@ -12,9 +12,9 @@ int main(void)
     {
         free(data);
     }
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: (warning) Potential leak of memory pointed to by 'data'
-    // Static Code Analysis Tool FP: (error) Memory leak: data
+    // Tool C FP: none
+    // Tool B FP: (warning) Potential leak of memory pointed to by 'data'
+    // Tool A FP: (error) Memory leak: data
     
-    // Note: Adding a return statement here causes the Static Code Analysis Tool FP to go away.
+    // Note: Adding a return statement here causes the Tool A FP to go away.
 }

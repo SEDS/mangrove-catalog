@@ -6,8 +6,8 @@
 int main(void)
 {
     {
-        // Misleading Static Code Analysis Tool warning: Value stored to 'intRand' during its initialization is never read
-        // Misleading Static Code Analysis Tool warning: Variable 'intRand' is assigned a value that is never used.
+        // Misleading Tool B warning: (warning) Value stored to 'intRand' during its initialization is never read
+        // Misleading Tool A warning: (style) Variable 'intRand' is assigned a value that is never used.
         int intRand = rand();
 
         // Problem: use of `=` instead of `==` operator.

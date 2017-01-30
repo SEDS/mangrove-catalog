@@ -13,9 +13,9 @@ void helper(char * data)
     size_t dataLen = strlen(data);
     if (fgets(data+dataLen, (int)(SIZE-dataLen), stdin) != NULL)
     {
-        // Static Code Analysis Tool FP: Useless Assignment. This code assigns the variable the same value it already had.
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: Useless Assignment. This code assigns the variable the same value it already had.
+        // Tool B FP: none
+        // Tool A FP: none
         dataLen = strlen(data);
     }
 }

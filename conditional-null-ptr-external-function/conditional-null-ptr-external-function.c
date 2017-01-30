@@ -17,9 +17,9 @@ int main(void)
         *myint = 5;
     }
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Dereference of null pointer (loaded from variable 'myint')
-    // Static Code Analysis Tool FP: Possible null pointer dereference: 'myint'
+    // Tool C FP: none
+    // Tool B FP: (warning) Dereference of null pointer (loaded from variable 'myint')
+    // Tool A FP: (error) Possible null pointer dereference: 'myint'
     printf("int: %d\n", *myint);
     
     free(myint);

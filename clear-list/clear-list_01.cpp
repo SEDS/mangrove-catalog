@@ -21,9 +21,9 @@ int main(void)
         {
             // CHANGE: Removed call to clear the list.
         }
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: none
+        // Tool B FP: none
+        // Tool A FP: none
         printf("data: %d\n", *i);
     }
     return 0;

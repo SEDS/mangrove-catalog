@@ -28,7 +28,11 @@ bool Calculator::validate_infix(const std::string & infix) {
         }
         // If last token was also a number, invalid expression.
         if (lastTokenNumber) {
-            // Static Code Analysis Tool FP: Unreachable Data Flow. The highlighted code will not execute under any circumstances.
+            // Tool C FP: Unreachable Data Flow. The highlighted code will not execute under any circumstances.
+            //   This may be because of:
+            //     (1) A function call that does not return
+            //     (2) A test whose result is always the same (look for a preceding Redundant Condition warning)
+            //     (3) A crashing bug (look for a preceding Null Pointer Dereference or Division By Zero warning)
             return false;
         }
         lastTokenNumber = true;

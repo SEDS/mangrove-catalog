@@ -9,9 +9,9 @@ int main(void)
 {
     char inputBuffer[BUFFER_SIZE] = "";
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Buffer is accessed out of bounds.
+    // Tool C FP: none
+    // Tool B FP: none
+    // Tool A FP: (error) Buffer is accessed out of bounds.
     fgets(inputBuffer, BUFFER_SIZE, stdin);
     return 0;
 }

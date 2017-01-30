@@ -24,9 +24,9 @@ static void goodG2BSink()
     {
         intPointer[i] = 7; /* Potentially writes beyond the boundary of intPointer */
     }
-    // Static Code Analysis Tool FP: Uninitialized Variable. *intPointer was not initialized
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
+    // Tool C FP: Uninitialized Variable. *intPointer was not initialized
+    // Tool B FP: none
+    // Tool A FP: none
     printf("%d\n", intPointer[0]);
     free(intPointer);
 }

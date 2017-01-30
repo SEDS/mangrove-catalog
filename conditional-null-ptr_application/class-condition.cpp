@@ -19,9 +19,9 @@ void ClassCondition::test(void) {
         data = new int(5);
     }
 
-    // Static Code Analysis Tool FP: Null Pointer Dereference. 'data' is dereferenced here, but it is NULL.
-    // Static Code Analysis Tool FP: Dereference of null pointer (loaded from variable 'data')
-    // Static Code Analysis Tool FP: Possible null pointer dereference: data
+    // Tool C FP: Null Pointer Dereference. 'data' is dereferenced here, but it is NULL.
+    // Tool B FP: Dereference of null pointer (loaded from variable 'data')
+    // Tool A FP: error: Possible null pointer dereference: data
     printf("Data: %d\n", *data);
 
     delete data;

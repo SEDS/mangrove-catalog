@@ -26,9 +26,9 @@ AllocUsingProperty::~AllocUsingProperty()
         intPointer[i] = 7;
     }
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool: none
+    // Tool C FP: none
+    // Tool B FP: none
+    // Tool A: none
     printf("int: %d\n", intPointer[0]);
     delete [] intPointer;
 }

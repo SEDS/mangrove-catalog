@@ -14,18 +14,18 @@ int main(void)
     // 'dataLen' is assigned the value 0.
     size_t dataLen = strlen(data);
     
-    // Note: If 'dataLen' is removed from the fgets() arguments (both instances), Static Code Analysis Tool FP goes away.
+    // Note: If 'dataLen' is removed from the fgets() arguments (both instances), Tool C FP goes away.
     if (fgets(data+dataLen, (int)(SIZE-dataLen), stdin) != NULL)
     {
         dataLen = strlen(data);
         // 'dataLen' is now at most SIZE-1. Thus, 'dataLen-1' is at most SIZE-2,
-        // which is in the bounds of the array (unless the index would be negative,
+        // which is within bounds of the array (unless the index would be negative,
         // but this conditional eliminates that case.)
         if (dataLen > 0 && data[dataLen-1] == '\n')
         {
-            // Static Code Analysis Tool FP: Tainted Buffer Access. This code could write past the end of the buffer pointed to by data.
-            // Static Code Analysis Tool FP: none
-            // Static Code Analysis Tool FP: none
+            // Tool C FP: Tainted Buffer Access. This code could write past the end of the buffer pointed to by data.
+            // Tool B FP: none
+            // Tool A FP: none
             data[dataLen-1] = '\0';
         }
     }

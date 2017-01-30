@@ -3,8 +3,8 @@
 
 // ###################################################################
 // ## Variant: array-resize_02
-// ## CHANGE 1: Allocate and initialize array inside helper function
-// ## CHANGE 2: Initialize to string of maximum length
+// ## CHANGE A: Allocate and initialize array inside helper function
+// ## CHANGE B: Initialize to string of maximum length
 // ###################################################################
 
 #include <stdio.h>
@@ -15,18 +15,18 @@
 
 void helper() 
 {
-    // CHANGE 1: Allocate and initialize the array inside the helper function (instead of in main function).
+    // CHANGE A: Allocate and initialize the array inside the helper function (instead of in main function).
     char * data;
     data = (char *)malloc(SIZE*sizeof(char));
-    // CHANGE 2: Initialize to string of maximum length within the capacity.
+    // CHANGE B: Initialize to string of maximum length within the capacity.
     strcpy(data, "abcd");
 
     size_t dataLen = strlen(data);
     if (fgets(data+dataLen, (int)(SIZE-dataLen), stdin) != NULL)
     {
-        // Static Code Analysis Tool warning (a TP): Useless Assignment. This code assigns the variable the same value it already had.
-        // Static Code Analysis Tool warning: none
-        // Static Code Analysis Tool warning: none
+        // Tool C warning (a TP): Useless Assignment. This code assigns the variable the same value it already had.
+        // Tool B warning: none
+        // Tool A warning: none
         dataLen = strlen(data);
     }
     free(data);

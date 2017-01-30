@@ -11,9 +11,9 @@ int main(void)
     // intend to read intArray[2] 
     // FLAW: sizeof() needed since pointer is a char*, not an int*
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Assigned value is garbage or undefined
-    // Static Code Analysis Tool FP: none
+    // Tool C FP: none
+    // Tool B FP: (warning) Assigned value is garbage or undefined
+    // Tool A FP: none
     int toPrint = (int) (*(charPointer + 2));
     printf("intArray[2]: %d\n", toPrint);
     return 0;

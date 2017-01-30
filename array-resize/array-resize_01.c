@@ -22,9 +22,9 @@ void helper()
     size_t dataLen = strlen(data);
     if (fgets(data+dataLen, (int)(SIZE-dataLen), stdin) != NULL)
     {
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: none
+        // Tool B FP: none
+        // Tool A FP: none
         dataLen = strlen(data);
     }
     free(data);

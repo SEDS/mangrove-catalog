@@ -3,9 +3,9 @@
 
 char * helper(char * data)
 {
-	// Static Code Analysis Tool FP: none
-	// Static Code Analysis Tool FP: none
-	// Static Code Analysis Tool FP: Pointer to local array variable returned.
+	// Tool C FP: none
+	// Tool B FP: none
+	// Tool A FP: (error) Pointer to local array variable returned.
     return data;
 }
 

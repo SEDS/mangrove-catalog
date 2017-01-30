@@ -2,7 +2,7 @@
 
 This `object-alloc` version allocates an object on the heap and deletes it in the virtual method. **This version does *not* flag a FP.**
 
-Below are the test cases I tried. Static Code Analysis Tool does not give a warning in any cases.
+Below are the test cases I tried. Tool C does not give a warning in any cases.
 
 ### Multiple-class structure (inheritance)
 

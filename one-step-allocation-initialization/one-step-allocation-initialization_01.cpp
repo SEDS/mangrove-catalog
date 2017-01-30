@@ -14,9 +14,9 @@ int main(void)
     int * data = new int;
     *data = 7;
     
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
+    // Tool C FP: none
+    // Tool B FP: none
+    // Tool A FP: none
     printf("int: %d\n", *data);
 
     delete data;

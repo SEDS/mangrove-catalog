@@ -8,7 +8,7 @@
 
 // GLOBAL_CONST_TRUE is defined as follows in io.c
 // const int GLOBAL_CONST_TRUE = 1;
-// If the global variable is defined within this file (still globally), the FPs go away (for Static Code Analysis Tool and Static Code Analysis Tool).
+// If the global variable is defined within this file (still globally), the FPs go away (for Tool B and Tool A).
 
 int main(void)
 {
@@ -20,9 +20,9 @@ int main(void)
         intPtr = &intVar;
     }
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Dereference of undefined pointer value
-    // Static Code Analysis Tool FP: Uninitialized variable: intPtr
+    // Tool C FP: none
+    // Tool B FP: (warning) Dereference of undefined pointer value
+    // Tool A FP: (error) Uninitialized variable: intPtr
     printf("int: %d\n", *intPtr);
     return 0;
 }

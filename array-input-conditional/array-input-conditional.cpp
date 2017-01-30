@@ -28,9 +28,9 @@ int main(void)
     {
         if (data[i] == SEARCH_CHAR)
         {
-            // Static Code Analysis Tool FP: Unreachable Call. The highlighted code will not execute under any circumstances.
-            // Static Code Analysis Tool FP: none
-            // Static Code Analysis Tool FP: none
+            // Tool C FP: Unreachable Call. The highlighted code will not execute under any circumstances.
+            // Tool B FP: none
+            // Tool A FP: none
             printf("We have a match!\n");
             break;
         }

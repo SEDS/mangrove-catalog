@@ -16,9 +16,9 @@ int main(void)
         {
             data.clear();
         }
-        // Static Code Analysis Tool FP: Use After Free. The memory pointed to by *i was freed...and is read from here.
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: Use After Free. The memory pointed to by *i was freed...and is read from here.
+        // Tool B FP: none
+        // Tool A FP: none
         printf("data: %d\n", *i);
     }
     return 0;

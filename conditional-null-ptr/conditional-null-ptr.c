@@ -13,9 +13,9 @@ int main(void)
         data = (int *)malloc(10*sizeof(int));
     }
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Array access (from variable 'data') results in a null pointer dereference
-    // Static Code Analysis Tool: Possible null pointer dereference: data
+    // Tool C FP: none
+    // Tool B FP: (warning) Array access (from variable 'data') results in a null pointer dereference
+    // Tool A: (error) Possible null pointer dereference: data
     data[0] = 5;
     free(data);
     return 0;

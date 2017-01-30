@@ -17,15 +17,19 @@ class TwoIntsClass
 
 int main(void)
 {
-    // Static Code Analysis Tool FP: Variable 'dataBadBuffer' is assigned a value that is never used.
+    // Tool A FP: (style) Variable 'dataBadBuffer' is assigned a value that is never used.
     int dataBadBuffer = 100;
     void * data = &dataBadBuffer;
 
     // CHANGE: Store result of cast to a variable (instead of passing to a function)
 
-    // Static Code Analysis Tool error: Buffer Overrun. This code reads past the end of the buffer pointed to by 'data'.
-    // Static Code Analysis Tool error: Assigned value is garbage or undefined
-    // Static Code Analysis Tool error: none
+    // Tool C error: Buffer Overrun. This code reads past the end of the buffer pointed to by 'data'.
+    //   - 'data' evaluates to '&dataBadBuffer'.
+    //   - The first byte read is at offset 4 from the beginning of the buffer pointed to by 'data', whose capacity is 4 bytes.
+    //       - The offset exceeds the capacity.
+    //   - The overrun occurs in stack memory.
+    // Tool B error: (warning) Assigned value is garbage or undefined
+    // Tool A error: none
     int myInt = reinterpret_cast<TwoIntsClass *>(data)->intTwo;
     return 0;
 }

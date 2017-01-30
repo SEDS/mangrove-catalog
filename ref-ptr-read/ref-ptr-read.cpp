@@ -8,9 +8,9 @@ int main(void)
     char * data;
     char * &dataRef = data;
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Value stored to 'data' is never read
-    // Static Code Analysis Tool FP: none
+    // Tool C FP: none
+    // Tool B FP: (warning) Value stored to 'data' is never read
+    // Tool A FP: none
     data = "Good";
     printf("%c\n", dataRef[0]);
     return 0;

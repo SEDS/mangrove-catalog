@@ -2,7 +2,7 @@
 
 This `mem-alloc-new` version allocates memory using `new` and deletes it in the virtual method. **This version does not flag a FP.**
 
-I tried these combinations of modifications in the table below. (The first row is for the code example given.) Static Code Analysis Tool does not flag a warning for any of these.
+I tried these combinations of modifications in the table below. (The first row is for the code example given.) Tool C does not flag a warning for any of these.
 
 user-defined namespace? | object instance in client (ptr, obj, &) | declared type of object in client | virtual base method is... | empty base method? | subclass method defined...
 --- | --- | --- | --- | --- | ---
@@ -17,7 +17,7 @@ no | ptr | base | NON-pure | no | externally
 no | ptr | base | NON-pure | no | internally
 no | ptr | base | NON-pure | yes | internally
 
-**Update:** Note that if we remove the `delete` call in [Deallocator.cpp](./Deallocator.cpp), Static Code Analysis Tool flags the warning (now a TP) *only if* a user-defined (non-global) namespace is used (more specifically, if the *class which deletes the memory* is defined in the namespace). This behavior is similar to we observed in the [multi-class](../multi-class) example, where a namespace in the sink apparently obscured things from Static Code Analysis Tool. **However, the only difference is that with this variation (where the resource is memory), a namespace does not cause a FP.**
+**Update:** Note that if we remove the `delete` call in [Deallocator.cpp](./Deallocator.cpp), Tool C flags the warning (now a TP) *only if* a user-defined (non-global) namespace is used (more specifically, if the *class which deletes the memory* is defined in the namespace). This behavior is similar to we observed in the [multi-class](../multi-class) example, where a namespace in the sink apparently obscured things from Tool C. **However, the only difference is that with this variation (where the resource is memory), a namespace does not cause a FP.**
 
 ## Other variations
 

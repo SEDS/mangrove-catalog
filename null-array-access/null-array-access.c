@@ -14,9 +14,9 @@ int main(void)
     {
         // Simplification from Juliet: We simply assign a value from `data` instead of using it in a comparison.
         
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: Assigned value is garbage or undefined
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: none
+        // Tool B FP: (warning) Assigned value is garbage or undefined
+        // Tool A FP: none
         char c = data[i];
     }
     free(data);

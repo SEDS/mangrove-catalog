@@ -11,9 +11,9 @@ int main(void)
     data = (char *)malloc(100*sizeof(char));
     free(data);
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Dereferencing 'data' after it is deallocated / released
+    // Tool C FP: none
+    // Tool B FP: none
+    // Tool A FP: (error) Dereferencing 'data' after it is deallocated / released
     *dataPtr = data;
     return 0;
 }

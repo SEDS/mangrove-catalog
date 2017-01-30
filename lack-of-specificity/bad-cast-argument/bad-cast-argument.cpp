@@ -15,9 +15,13 @@ int main(void)
     int dataBadBuffer = 100;
     void * data = &dataBadBuffer;
 
-    // Static Code Analysis Tool error: Buffer Overrun. This code reads past the end of the buffer pointed to by 'data'.
-    // Static Code Analysis Tool error: Function call argument is an uninitialized value
-    // Static Code Analysis Tool error: none
+    // Tool C error: Buffer Overrun. This code reads past the end of the buffer pointed to by 'data'.
+    //   - 'data' evaluates to '&dataBadBuffer'.
+    //   - The first byte read is at offset 4 from the beginning of the buffer pointed to by 'data', whose capacity is 4 bytes.
+    //       - The offset exceeds the capacity.
+    //   - The overrun occurs in stack memory.
+    // Tool B error: (warning) Function call argument is an uninitialized value
+    // Tool A error: none
     printf("int: %d\n", (reinterpret_cast<TwoIntsClass *>(data))->intTwo);
     return 0;
 }

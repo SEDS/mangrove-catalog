@@ -9,8 +9,8 @@ int main(void)
 
     x = (rand() % 3);
 
-    // Misleading Static Code Analysis Tool warning: Value stored to 'y' is never read
-    // Misleading Static Code Analysis Tool warning: none
+    // Misleading Tool B warning: (warning) Value stored to 'y' is never read
+    // Misleading Tool A warning: none
     y = 0;
     
     // Problem: programmer forgot to delimitate the IF body with braces.

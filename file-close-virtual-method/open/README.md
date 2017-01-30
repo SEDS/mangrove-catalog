@@ -2,7 +2,7 @@
 
 **`Open` variation: Original FP version that uses object inheritance and the `open()` function. This is the version present in Juliet.**
 
-Static Code Analysis Tool flags a "Leak" false positive error for the above code, assuming an opened file is never closed. However, the file *is* closed after being passed to a virtual method of a class.
+Tool C flags a "Leak" false positive error for the above code, assuming an opened file is never closed. However, the file *is* closed after being passed to a virtual method of a class.
 
 The FP pattern appears in OOP situations with and without inheritance.
 
@@ -26,7 +26,7 @@ I assume the caller uses a *subclass* instance for the actual type. Otherwise, w
  
 ## Other functions
 
-I tested other C allocators/deallocators besides `open()` to observe Static Code Analysis Tool's behavior with them. The table below lists functions I tested and the Static Code Analysis Tool warning message flagged for a given configuration. Here are the meanings of the column names:
+I tested other C allocators/deallocators besides `open()` to observe Tool C's behavior with them. The table below lists functions I tested and the Tool C warning message flagged for a given configuration. Here are the meanings of the column names:
 
 * "Namespace": code is defined in a user-defined namespace (as in the example), except for `main()`.
 * "No namespace": everything is defined in the (default) global namespace.
@@ -35,7 +35,7 @@ I tested other C allocators/deallocators besides `open()` to observe Static Code
 
 In general, a `leak` warning in a "dealloc" column is a FP, while a `leak` warning in a "no dealloc" column is a TP.
 
-**The fact that the "Namespace, dealloc" column and the "Namespace, no dealloc" column are the same for each function suggests that Static Code Analysis Tool may have trouble reasoning through a data sink that resides in a user-defined namespace.**
+**The fact that the "Namespace, dealloc" column and the "Namespace, no dealloc" column are the same for each function suggests that Tool C may have trouble reasoning through a data sink that resides in a user-defined namespace.**
 
 Function | Namespace, dealloc | No namespace, dealloc | Namespace, no dealloc | No namespace, no dealloc
 --- | --- | --- | --- | ---
@@ -51,6 +51,6 @@ closedir | none | none | none | ***leak***
 fdopen | none | ??\* | none | ***leak***\*\*
 pipe | none | none | none | none\*\*\*
 
-\*Static Code Analysis Tool flags a "double close" warning for this configuration. I'm not sure if this is a TP or FP--more research into the `fdopen()` function would help.  
+\*Tool C flags a "double close" warning for this configuration. I'm not sure if this is a TP or FP--more research into the `fdopen()` function would help.  
 \*\*Running valgrind against this configuration shows that no files are actually left open. Apparently the stream opened by fdopen is implicitly closed at exit.  
-\*\*\*Valgrind clearly showed two unclosed files in this case (*two* since `pipe()` opens two file descriptors). I am not sure why Static Code Analysis Tool did not flag this TP.
+\*\*\*Valgrind clearly showed two unclosed files in this case (*two* since `pipe()` opens two file descriptors). I am not sure why Tool C did not flag this TP.

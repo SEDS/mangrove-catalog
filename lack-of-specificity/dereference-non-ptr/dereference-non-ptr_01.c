@@ -17,9 +17,9 @@ int main(void)
     data = (char *)malloc(100*sizeof(char));
     free(data);
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
+    // Tool C FP: none
+    // Tool B FP: none
+    // Tool A FP: none
     dataPtr = data;
     return 0;
 }

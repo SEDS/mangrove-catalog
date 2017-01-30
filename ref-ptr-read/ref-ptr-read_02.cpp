@@ -16,12 +16,12 @@ int main(void)
 
     // CHANGE: Data allocated on stack
     
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
+    // Tool C FP: none
+    // Tool B FP: none
+    // Tool A FP: none
     data = new int(15);
     
-    // Static Code Analysis Tool FP: Memory is allocated but not initialized: data [unrelated to ref-ptr-read FP structure]
+    // Tool A FP: (error) Memory is allocated but not initialized: data [unrelated to ref-ptr-read FP structure]
     printf("int: %d\n", *dataRef);
 
     delete data;

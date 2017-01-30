@@ -24,9 +24,9 @@ int main(void)
 
     void * data = &dataGoodBuffer;
 
-    // Static Code Analysis Tool error: none
-    // Static Code Analysis Tool error: none
-    // Static Code Analysis Tool error: none
+    // Tool C error: none
+    // Tool B error: none
+    // Tool A error: none
     printf("int: %d\n", (reinterpret_cast<TwoIntsClass *>(data))->intTwo);
     return 0;
 }

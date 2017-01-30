@@ -11,12 +11,12 @@ int main(void)
     char * data;
     if (staticTrue)
     {
-        // Static Code Analysis Tool does not flag FP if malloc is used instead of alloca
+        // Tool A does not flag FP if malloc is used instead of alloca
         data = (char *)alloca((10)*sizeof(char));
     }
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Function call argument is an uninitialized value
-    // Static Code Analysis Tool FP: Uninitialized variable: data
+    // Tool C FP: none
+    // Tool B FP: (warning) Function call argument is an uninitialized value
+    // Tool A FP: (error) Uninitialized variable: data
     strcpy(data, "test");
     return 0;
 }

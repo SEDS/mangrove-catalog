@@ -22,9 +22,9 @@ int main(void)
     ClassType * myClass = new ClassType();
     myUnion.firstMember = myClass;
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Potential leak of memory pointed to by 'myUnion.firstMember'
-    // Static Code Analysis Tool FP: none
+    // Tool C FP: none
+    // Tool B FP: (warning) Potential leak of memory pointed to by 'myUnion.firstMember'
+    // Tool A FP: none
     ClassType * myClass2 = myUnion.secondMember;
     delete myClass2;
     return 0;

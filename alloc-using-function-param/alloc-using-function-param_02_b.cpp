@@ -18,9 +18,9 @@ void good(int data)
     {
         intPointer[i] = 5; /* may write beyond limit of intPointer if integer overflow occurred above */
     }
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: none
+    // Tool C FP: none
+    // Tool B FP: none
+    // Tool A FP: none
     printf("int: %d\n", intPointer[0]);
     delete [] intPointer;
 }

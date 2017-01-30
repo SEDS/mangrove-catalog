@@ -16,9 +16,9 @@ int main()
    strcpy(str, "7");
    sscanf(str, "%d", &myInt);
 
-   // Static Code Analysis Tool FP: Uninitialized Variable. 'myInt' was not initialized.
-   // Static Code Analysis Tool FP: none
-   // Static Code Analysis Tool FP: none
+   // Tool C FP: Uninitialized Variable. 'myInt' was not initialized.
+   // Tool B FP: none
+   // Tool A FP: none
    printf("%d\n", myInt);
     
    return 0;

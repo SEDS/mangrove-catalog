@@ -15,12 +15,12 @@ int main(void)
     int * &dataRef = data;
 
     // CHANGE: Data allocated on stack
-    // Static Code Analysis Tool FP: Variable 'dataBadBuffer' is assigned a value that is never used.
+    // Tool A FP: (style) Variable 'dataBadBuffer' is assigned a value that is never used.
     int dataBadBuffer = 7;
 
-    // Static Code Analysis Tool FP: none
-    // Static Code Analysis Tool FP: Value stored to 'data' is never read
-    // Static Code Analysis Tool FP: Variable 'data' is assigned a value that is never used.
+    // Tool C FP: none
+    // Tool B FP: (warning) Value stored to 'data' is never read
+    // Tool A FP: (style) Variable 'data' is assigned a value that is never used.
     data = &dataBadBuffer;
     
     printf("int: %d\n", *dataRef);

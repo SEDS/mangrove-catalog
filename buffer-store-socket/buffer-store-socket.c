@@ -59,9 +59,9 @@ int main(void)
         // Also, 'recvResult' can be at most 99 (see third argument of `recv` above).
         // Thus, 'recvResult' is in the bounds [1,99], which is valid for the 'data' memory block.
 
-        // Static Code Analysis Tool FP: Tainted Buffer Access. This code could write past the end of 'data'.
-        // Static Code Analysis Tool FP: none
-        // Static Code Analysis Tool FP: none
+        // Tool C FP: Tainted Buffer Access. This code could write past the end of 'data'.
+        // Tool B FP: none
+        // Tool A FP: none
         data[recvResult] = '\0';
     } while (1);
     if (listenSocket != INVALID_SOCKET)
