@@ -42,9 +42,9 @@ is performed independently against the original code.
 
 ## Toolset
 
-* Tool C
-* Tool B
 * Tool A
+* Tool B
+* Tool C
 
 ## False Positive Hierarchy Graph
 
