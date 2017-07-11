@@ -41,9 +41,13 @@ is performed independently against the original code.
 
 ## Toolset
 
-* Tool A
-* Tool B
-* Tool C
+We have removed the tool names in accordance with our agreements with the tools vendors.
+
+Tool name | Tool type
+--- | ---
+Tool A | Open source
+Tool B | Open source
+Tool C | Commercial
 
 ## False Positive Hierarchy Graph
 
